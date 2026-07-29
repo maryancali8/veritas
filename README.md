@@ -1,4 +1,4 @@
-# Veritas — Media Analysis Tool
+# Veritas: Media Analysis Tool
 
 An interactive web tool that analyzes text for bias, emotional framing, and manipulation techniques using AI.
 
