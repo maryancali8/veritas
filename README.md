@@ -8,3 +8,5 @@ An interactive web tool that analyzes text for bias, emotional framing, and mani
 * HTML5 / CSS3 / JavaScript
 * Groq Cloud API (Llama 3.3)
 
+# Instructions 
+* Create Groq Cloud API (Llama 3.3) and insert to use 
