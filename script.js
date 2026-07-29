@@ -1,10 +1,8 @@
-const API_KEY = '';
-
 const SYSTEM_PROMPT = `You are Veritas, a forensic media analyst. Your job is to detect bias and manipulation in media content. Return valid JSON only, nothing else. No markdown, no backticks, just the raw JSON object.
 
 Rules:
 - credibility_score must be a whole number between 1 and 10. Never a decimal. Never outside that range.
-- You are a forensic analyst. You report facts. You do not soften, sanitise or protect anyone's reputation.
+- You are a forensic analyst. You report facts. You do not sanitize or protect anyone's reputation.
 - Before flagging language as biased, ask yourself: if the events described are factually true, does this language accurately describe them? If yes, do not flag it as bias. Accurate language describing real events is not manipulation.
 - Only flag language as manipulative if it distorts, exaggerates, or frames facts to serve an agenda beyond what the facts support.
 - Quotation marks around a word indicate the source is quoting someone or using the term deliberately. This is not automatically sensationalism.
@@ -40,7 +38,9 @@ function goBack() {
 async function analyse() {
   const overlay = document.getElementById('loadingOverlay');
   const userContent = document.getElementById('rawTextContent').value;
+  const apiKey = document.getElementById('apiKeyInput').value.trim();
 
+  if (!apiKey) return alert("Please enter your Groq API key.");
   if (!userContent) return alert("Please enter some text.");
 
   try {
@@ -50,7 +50,7 @@ async function analyse() {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': 'Bearer ' + API_KEY
+        'Authorization': 'Bearer ' + apiKey
       },
       body: JSON.stringify({
         model: 'llama-3.3-70b-versatile',
@@ -62,6 +62,11 @@ async function analyse() {
     });
 
     const data = await response.json();
+
+    if (data.error) {
+      throw new Error(data.error.message);
+    }
+
     const rawText = data.choices[0].message.content;
     const result = JSON.parse(rawText.replace(/```json|```/g, '').trim());
 
@@ -84,7 +89,7 @@ async function analyse() {
     document.getElementById('resultsPage').classList.remove('hidden');
 
   } catch (err) {
-    console.error("Error:", err.message);
+    console.error("Error:", err);
     alert("Something went wrong: " + err.message);
   } finally {
     overlay.classList.add('hidden');
