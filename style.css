@@ -8,28 +8,28 @@ body {
   font-family: 'DM Sans', sans-serif;
   min-height: 100vh;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: center; /* Keeps it centered horizontally */
   margin: 0;
+  padding: 2rem 0;
 }
 
 .container { 
   width: 100%; 
-  max-width: 680px; 
-  padding: 2rem; 
+  max-width: 950px; /* Increased from 680px to stretch wider across the screen */
+  padding: 0 2rem; 
   margin: 0 auto;
 }
 
 .page { width: 100%; }
 .hidden { display: none !important; }
 
-.header { text-align: center; margin-bottom: 2.5rem; margin-top: 2rem; }
+.header { text-align: center; margin-bottom: 2.5rem; margin-top: 1rem; }
 .eyebrow { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #7c6dfa; margin-bottom: 1rem; display: block; }
 h1 { font-family: 'Syne', sans-serif; font-size: 3.5rem; font-weight: 800; background: linear-gradient(135deg, #ffffff 0%, #a594fc 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 0.5rem; }
 .tagline { color: #5a5a70; font-size: 14px; font-weight: 300; }
 
 .input-card, .score-card, .verdict-card, .categories-card, .breakdown-card, .highlight-card, .cleaned-card {
-  background: #111118; border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 1.5rem; margin-bottom: 1rem;
+  background: #111118; border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 1.8rem; margin-bottom: 1.2rem;
 }
 
 textarea {
