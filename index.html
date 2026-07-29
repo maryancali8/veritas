@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Veritas - Media Analysis Tool</title>
-  <!-- This line links your stylesheet so your design loads properly -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -22,6 +21,13 @@
       <p class="tagline">The truth beneath the surface</p>
     </div>
     <div class="input-card">
+      
+      <!-- API Key Input Box added here -->
+      <div class="api-key-container" style="margin-bottom: 15px;">
+        <label for="apiKeyInput" style="font-size: 14px; display: block; margin-bottom: 5px; color: #555;">Enter your Grok API Key:</label>
+        <input type="password" id="apiKeyInput" placeholder="xai-..." style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #ccc; font-size: 14px; box-sizing: border-box;">
+      </div>
+
       <div class="input-area" id="textInputArea">
         <textarea id="rawTextContent" placeholder="Paste any text, article, or statement here..."></textarea>
       </div>
@@ -68,7 +74,6 @@
   </div>
 </div>
 
-<!-- This line links your JavaScript file -->
 <script src="script.js"></script>
 </body>
 </html>
