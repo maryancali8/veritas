@@ -1,0 +1,58 @@
+<div class="loading-overlay hidden" id="loadingOverlay">
+  <div class="loading-spinner"></div>
+  <p class="loading-message" id="loadingMessage">Scanning for manipulation techniques...</p>
+</div>
+
+<div class="page" id="inputPage">
+  <div class="container">
+    <div class="header">
+      <div class="eyebrow">Media Analysis Tool</div>
+      <h1>Veritas</h1>
+      <p class="tagline">The truth beneath the surface</p>
+    </div>
+    <div class="input-card">
+      <div class="input-area" id="textInputArea">
+        <textarea id="rawTextContent" placeholder="Paste any text, article, or statement here..."></textarea>
+      </div>
+
+      <button class="analyse-btn" onclick="analyse()">Analyse</button>
+    </div>
+  </div>
+</div>
+
+<div class="page hidden" id="resultsPage">
+  <div class="container">
+    <div class="results-header">
+      <button class="back-btn" onclick="goBack()">← Back</button>
+      <span class="eyebrow">Analysis Complete</span>
+    </div>
+    <div class="score-card">
+      <p class="score-label">Credibility Score</p>
+      <div class="score-circle">
+        <span id="scoreNumber">0</span><span class="score-max">/10</span>
+      </div>
+      <p class="verdict-label" id="verdictLabel"></p>
+      <p class="score-reasoning" id="scoreReasoning"></p>
+    </div>
+    <div class="verdict-card">
+      <p class="card-label">Bias Verdict</p>
+      <p class="verdict-text" id="biasDirection"></p>
+    </div>
+    <div class="categories-card">
+      <p class="card-label">Categories Detected</p>
+      <div class="badges" id="categoriesBadges"></div>
+    </div>
+    <div class="breakdown-card">
+      <p class="card-label">Detailed Breakdown</p>
+      <div class="techniques" id="techniquesList"></div>
+    </div>
+    <div class="highlight-card" id="highlightSection">
+      <p class="card-label">Highlighted Bias</p>
+      <div class="highlighted-text" id="highlightedText"></div>
+    </div>
+    <div class="cleaned-card">
+      <p class="card-label">Cleaned Version</p>
+      <p class="cleaned-text" id="cleanedVersion"></p>
+    </div>
+  </div>
+</div>

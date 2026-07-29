@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: #080810;
+  color: #f0f0f8;
+  font-family: 'DM Sans', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.container { width: 100%; max-width: 680px; padding: 2rem; }
+.page { width: 100%; }
+.hidden { display: none !important; }
+
+.header { text-align: center; margin-bottom: 2.5rem; margin-top: 2rem; }
+.eyebrow { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #7c6dfa; margin-bottom: 1rem; display: block; }
+h1 { font-family: 'Syne', sans-serif; font-size: 3.5rem; font-weight: 800; background: linear-gradient(135deg, #ffffff 0%, #a594fc 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 0.5rem; }
+.tagline { color: #5a5a70; font-size: 14px; font-weight: 300; }
+
+.input-card, .score-card, .verdict-card, .categories-card, .breakdown-card, .highlight-card, .cleaned-card {
+  background: #111118; border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 1.5rem; margin-bottom: 1rem;
+}
+
+textarea {
+  width: 100%; background: #080810; border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; color: #f0f0f8; padding: 1rem; outline: none; font-family: inherit;
+  height: 180px; resize: none;
+}
+
+.analyse-btn { width: 100%; margin-top: 1.5rem; background: #7c6dfa; border: none; border-radius: 10px; color: white; padding: 14px; cursor: pointer; font-family: 'Syne', sans-serif; font-weight: 700; text-transform: uppercase; }
+
+.score-circle { width: 120px; height: 120px; border: 4px solid #7c6dfa; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 1rem auto; font-family: 'Syne'; font-size: 3rem; }
+.score-max { font-size: 1rem; color: #5a5a70; }
+
+.badges { display: flex; flex-wrap: wrap; gap: 8px; }
+.badge { font-size: 11px; padding: 4px 12px; border-radius: 20px; background: rgba(124,109,250,0.1); color: #a594fc; }
+
+.loading-overlay { position: fixed; inset: 0; background: #080810; display: flex; flex-direction: column; align-items: center; justify-content: center; z-index: 100; }
+.loading-spinner { width: 40px; height: 40px; border: 3px solid rgba(124,109,250,0.2); border-top-color: #7c6dfa; border-radius: 50%; animation: spin 1s linear infinite; margin-bottom: 1rem; }
+@keyframes spin { to { transform: rotate(360deg); } }
